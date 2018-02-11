@@ -3,9 +3,12 @@ package service;
 import java.sql.Date;
 import java.util.Collection;
 
+import org.springframework.stereotype.Service;
+
 import entities.Movie;
 import entities.Ticket;
 
+@Service
 public interface TicketServiceInterface {
 
 	void put(Ticket ticket);
