@@ -1,6 +1,9 @@
-package cinema;
+package service;
 
+import java.sql.Date;
 import java.util.Collection;
+
+import entities.Movie;
 
 public interface MovieServiceInterface {
 
@@ -13,7 +16,7 @@ public interface MovieServiceInterface {
 	Collection<Movie> selectByName(String name);
 	Collection<Movie> selectByDuration(int lowerDur, int upperDur);
 	Collection<Movie> selectByRestriction(int lowerAge, int upperAge);
-	Collection<Movie> selectByDate(int lowerDate, int upperDate);
+	Collection<Movie> selectByDate(Date lowerDate, Date upperDate);
 	
 	
 	

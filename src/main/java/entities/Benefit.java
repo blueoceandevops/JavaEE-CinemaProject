@@ -1,4 +1,4 @@
-package cinema;
+package entities;
 
 public class Benefit {
 
