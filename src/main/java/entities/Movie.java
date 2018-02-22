@@ -7,7 +7,7 @@ import java.util.Collection;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
-
+import java.net.URL;
 @Component
 public class Movie {
 	
@@ -22,8 +22,8 @@ public class Movie {
 	@NotNull
 	private Date endDate;
 	private int ageRestriction;
-	private String trailerLink;
-	private String posterLink;
+	private URL trailerLink;
+	private URL posterLink;
 	
 	public Movie() {}
 	
