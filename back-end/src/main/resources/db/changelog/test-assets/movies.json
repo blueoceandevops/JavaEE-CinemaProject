@@ -1,0 +1,38 @@
+[
+  {
+    "id":1,
+    "title":"Any",
+    "original_title":"Any",
+    "duration":120,
+    "release_date":"2018-01-01",
+    "cinema_release_date":"2018-01-01",
+    "cinema_release_end_date":"2018-01-01"
+  },
+  {
+    "id":2,
+    "title":"Any other",
+    "original_title":"Any",
+    "duration":12,
+    "release_date":"2018-01-01",
+    "cinema_release_date":"2018-01-01",
+    "cinema_release_end_date":"2018-01-01"
+  },
+  {
+    "id":3,
+    "title":"Test",
+    "original_title":"Any",
+    "duration":122,
+    "release_date":"2018-01-01",
+    "cinema_release_date":"2018-03-01",
+    "cinema_release_end_date":"2018-05-01"
+  },
+  {
+    "id":4,
+    "title":"Any test",
+    "original_title":"Any",
+    "duration":100,
+    "release_date":"2018-01-01",
+    "cinema_release_date":"2018-02-01",
+    "cinema_release_end_date":"2018-05-21"
+  }
+]

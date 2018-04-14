@@ -1,0 +1,18 @@
+[
+  {
+    "type":"DRAMA",
+    "name":"Drama"
+  },
+  {
+    "type":"COMEDY",
+    "name":"Comedy"
+  },
+  {
+    "type":"SCIENCE_FICTION",
+    "name":"Science fiction"
+  },
+  {
+    "type":"THRILLER",
+    "name":"Thriller"
+  }
+]

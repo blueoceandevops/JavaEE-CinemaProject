@@ -1,0 +1,37 @@
+spring:
+    profiles:
+        active: dev
+    datasource:
+        url: jdbc:h2:mem:cinema
+        username: sa
+        password:
+    jpa:
+        properties:
+            hibernate:
+                dialect: com.naukma.cinema.config.H2DialectCustom
+        hibernate:
+            ddl-auto: validate
+    liquibase:
+        change-log: classpath:/db/db-changelog.xml
+
+facebook:
+    client:
+        clientId: 1619999618120599
+        clientSecret: 0b28130f2ca3397519b9c63e6edee2fc
+        accessTokenUri: https://graph.facebook.com/oauth/access_token
+        userAuthorizationUri: https://www.facebook.com/dialog/oauth
+        tokenName: oauth_token
+        authenticationScheme: query
+        clientAuthenticationScheme: form
+    resource:
+        userInfoUri: https://graph.facebook.com/me
+
+github:
+    client:
+        clientId: bd1c0a783ccdd1c9b9e4
+        clientSecret: 1a9030fbca47a5b2c28e92f19050bb77824b5ad1
+        accessTokenUri: https://github.com/login/oauth/access_token
+        userAuthorizationUri: https://github.com/login/oauth/authorize
+        clientAuthenticationScheme: form
+    resource:
+        userInfoUri: https://api.github.com/user

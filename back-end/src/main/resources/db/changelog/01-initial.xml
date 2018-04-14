@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="01-1" author="Veronika Rovnik">
+        <createTable tableName="genre">
+            <column name="type" type="varchar(64)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="01-2" author="Veronika Rovnik">
+        <createTable tableName="movie">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="original_title" type="varchar(128)"/>
+            <column name="duration" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="release_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cinema_release_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cinema_release_end_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="01-3" author="Veronika Rovnik">
+        <createTable tableName="movie_map_genre">
+            <column name="movie_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="movie_map_genre_ref_movie"
+                             referencedTableName="movie"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="genre_type" type="varchar(64)">
+                <constraints nullable="false"
+                             foreignKeyName="movie_map_genre_ref_genre"
+                             referencedTableName="genre"
+                             referencedColumnNames="type"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="movie_map_genre"
+                       columnNames="movie_id,genre_type"/>
+    </changeSet>
+    
+    <changeSet id="01-4" author="Veronika Rovnik">
+        <createTable tableName="auditorium">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(32)">
+                <constraints nullable="true" unique="true"/>
+            </column>
+            <column name="rows" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="places_in_row" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="01-5" author="Veronika Rovnik">
+        <createTable tableName="movie_session">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="movie_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="movie_session_ref_movie"
+                             referencedTableName="movie"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="start_date_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hall_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="movie_session_ref_auditorium"
+                             referencedTableName="auditorium"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="01-6" author="Veronika Rovnik">
+        <createTable tableName="user">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="email" type="varchar(64)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="01-7" author="Veronika Rovnik">
+        <createTable tableName="ticket">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="movie_session_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="ticket_ref_movie_session"
+                             referencedTableName="movie_session"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="user_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="ticket_ref_user"
+                             referencedTableName="user"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="sell_time" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="occupied_seat_id" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="01-8" author="Veronika Rovnik">
+        <createTable tableName="occupied_seat">
+            <column name="id" type="INTEGER">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="row" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="seat" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addUniqueConstraint tableName="occupied_seat"
+                             columnNames="row,seat"/>
+    </changeSet>
+
+    <changeSet id="01-9" author="Veronika Rovnik">
+        <createTable tableName="movie_session_map_occupied_seat">
+            <column name="movie_session_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="movie_session_map_seat_ref_movie_session"
+                             referencedTableName="movie_session"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="occupied_seat_id" type="INTEGER">
+                <constraints nullable="false"
+                             foreignKeyName="movie_session_map_seat_ref_seat"
+                             referencedTableName="occupied_seat"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+        <addPrimaryKey tableName="movie_session_map_occupied_seat"
+                       columnNames="movie_session_id,occupied_seat_id"/>
+    </changeSet>
+
+    <changeSet id="09" author="Veronika Rovnik">
+        <createSequence sequenceName="movie_sequence"/>
+    </changeSet>
+
+</databaseChangeLog>

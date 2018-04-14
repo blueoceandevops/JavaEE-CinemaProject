@@ -1,0 +1,26 @@
+[
+  {
+    "id":1,
+    "name":"Blue",
+    "rows":20,
+    "places_in_row":10
+  },
+  {
+    "id":2,
+    "name":"Green",
+    "rows":25,
+    "places_in_row":15
+  },
+  {
+    "id":3,
+    "name":"Black",
+    "rows":4,
+    "places_in_row":5
+  },
+  {
+    "id":4,
+    "name":"Red",
+    "rows":30,
+    "places_in_row":20
+  }
+]

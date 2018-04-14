@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="02-1" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/genres.json"/>
+            <param name="tableName" value="genre"/>
+        </customChange>
+    </changeSet>
+
+    <changeSet id="02-2" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/movies.json"/>
+            <param name="tableName" value="movie"/>
+        </customChange>
+    </changeSet>
+
+    <changeSet id="02-3" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/users.json"/>
+            <param name="tableName" value="user"/>
+        </customChange>
+    </changeSet>
+
+    <changeSet id="02-4" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/auditoriums.json"/>
+            <param name="tableName" value="auditorium"/>
+        </customChange>
+    </changeSet>
+
+    <changeSet id="02-5" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/movie-sessions.json"/>
+            <param name="tableName" value="movie_session"/>
+        </customChange>
+    </changeSet>
+
+    <changeSet id="02-6" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/movies-map-genres.json"/>
+            <param name="tableName" value="movie_map_genre"/>
+        </customChange>
+    </changeSet>
+
+</databaseChangeLog>
