@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<div class="bottom-part" th:fragment="footer">
+    <nav>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">ПРО НАС</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">УВІЙТИ</a>
+            </li>
+        </ul>
+    </nav>
+    <hr/>
+    <div class="under-line row">
+    <div class="col-md-6 col-sm-6 log-in-bottom">
+        <a href="#">
+            <img th:src="@{/images/google-plus.png}" type="image/png" class="google-plus" alt="Google+">
+        </a>
+    </div>
+    <div class="col-md-6 col-sm-6 annotation">
+        Java EE Project
+    </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,299 @@
+@main-orang: #ca4f3f;
+@dark-orang: #993629;
+@main-black: #292727;
+@dark-gray: #454141;
+@light-gray: #c7c6c6;
+@middle-gray: #c0bfbf;
+
+@font-face {
+  font-family: "FiraMono";
+  src: url("../fonts/FiraMono-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body, body a, body a:visited
+{
+  font-family: "FiraMono";
+  color: @light-gray;
+}
+
+body a:hover, a.active{
+  color: @main-orang !important;
+}
+
+.logo-img
+{
+  padding-top: 0px;
+}
+
+.google-plus
+{
+  width: 30px;
+  height: 30px;
+}
+
+.log-in-top
+{
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+.menu{
+  background-color: @main-black !important;
+  .bottom-menu
+  {
+    margin-top: 65px;
+  }
+}
+
+
+div{
+
+  .sort-panel
+  {
+    background-color: @main-black !important;
+    color: @light-gray;
+    padding: 15px;
+    margin: 15px;
+    margin-bottom: 0px;
+  }
+
+  .preview {
+    overflow: hidden;
+    width: 100%;
+    background-color: @dark-gray;
+    width: 100%;
+
+    .caption-container{
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        margin: 0 auto;
+        width: 1050px;
+      }
+    }
+    img
+    {
+      display: block;
+      height: 450px;
+      margin: 0 auto;
+      max-width: 1024px;
+      object-fit: cover;
+    }
+
+    .info {
+      background-color: rgba(202, 79, 63, 0.7);
+      bottom: 0;
+      left: 0;
+      padding: 15px 0;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      .caption-container
+      {
+        .caption-details{
+          text-align: left;
+        }
+
+        .caption-link
+        {
+          text-align: right;
+        }
+      }
+
+      a {
+        border: 3px solid @light-gray;
+        color: @light-gray;
+        display: inline-block;
+        font-weight: 300;
+        font-size: 20px;
+        padding: 10px 30px;
+        text-decoration: none;
+        vertical-align: middle;
+      }
+
+      a:hover, a:active, a:visited, a:focus
+      {
+        border-color: white;
+        color: white;
+        background-color: transparent;
+      }
+
+      h2
+      {
+        font-weight: 100;
+        font-size: 20px;
+        margin: 15px;
+        color: @light-gray;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+.calendar
+{
+  background-color: @main-orang;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+  margin: 0px 15px 0px 15px;
+  #dateScroller {
+    display: inline-block;
+    padding: 10px 0 16px;
+    vertical-align: middle;
+    z-index: 0;
+  }
+
+  li
+  {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 0.9em;
+    height: 55px;
+    line-height: 1;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 110px;
+    z-index: 1;
+
+    a{
+      color: @middle-gray;
+      display: inline-block;
+      height: 100%;
+      text-decoration: none;
+      width: 100%;
+      text-transform: uppercase;
+
+      span.date {
+        display: block;
+        font-size: 2.5em;
+        font-weight: bold;
+        line-height: 1;
+      }
+    }
+
+    a:hover, a.active
+    {
+      color: @dark-gray !important;
+    }
+  }
+
+  li.active a {
+    background-color: @dark-orang;
+    height: 97px;
+    left: 0;
+    padding-top: 10px;
+    position: absolute;
+    top: -10px;
+    z-index: 2;
+  }
+
+  li.active a:after {
+    border-top: 5px solid @dark-orang;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -5px;
+    content: "";
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+  }
+}
+
+.all-films
+{
+  background-color: @middle-gray;
+  margin: 0px 15px 0px 15px;
+  padding: 5px;
+  .one-film {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    a {
+      border: 3px solid @main-orang !important;
+      color: @main-orang !important;
+      display: inline-block;
+      font-weight: 300;
+      font-size: 20px;
+      padding: 10px 30px;
+      text-decoration: none;
+      vertical-align: middle;
+      margin: 10px;
+    }
+
+    a:hover{
+      border-color: @dark-orang !important;
+      color: @dark-orang !important;
+      background-color: transparent;
+    }
+    .poster {
+      display: inline-block;
+      height: 235px;
+      vertical-align: top;
+      width: 165px;
+      margin: 10px;
+    }
+
+    .film-text{
+      .film-name{
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 400;
+        color: @main-black;
+      }
+
+      .time
+      {
+        font-size: 12px;
+        font-weight: 200;
+        color: @dark-gray;
+      }
+
+      p
+      {
+        font-size: 16px;
+        font-weight: 300;
+        color: @main-black;
+      }
+    }
+  }
+}
+
+.bottom-part
+{
+  background-color: @main-black;
+  padding: 30px;
+  margin-top: 15px;
+  li a
+  {
+    text-decoration: underline;
+  }
+
+  hr {
+    border: 1px solid #373737;
+  }
+.under-line {
+
+  .log-in-bottom {
+    display: inline;
+    text-align: left;
+    a img{
+      margin-left: 0;
+    }
+  }
+
+  .annotation {
+    text-align: right;
+    font-weight: 100;
+  }
+}
+}

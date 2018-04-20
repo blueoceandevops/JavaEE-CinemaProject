@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark logo-img menu" th:fragment="header">
+    <a class="navbar-brand logo-img" href="/" th:href="@{/}">
+        <img th:src="@{/images/logo.png}" type="image/png" class="d-inline-block align-top" alt="X-cinema">
+    </a>
+    <div class="log-in-top">
+        <a href="#">
+            <img th:src="@{/images/google-plus.png}" type="image/png" class="google-plus" alt="Google+">
+        </a>
+    </div>
+    <ul class="nav justify-content-end bottom-menu">
+    <li class="nav-item">
+        <a class="nav-link active" href="/" th:href="@{/}">ЗАРАЗ У КІНО</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">СКОРО У ПРОКАТІ</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">ПРО НАС</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">УВІЙТИ</a>
+    </li>
+</ul>
+</nav>
+
+</body>
+</html>
