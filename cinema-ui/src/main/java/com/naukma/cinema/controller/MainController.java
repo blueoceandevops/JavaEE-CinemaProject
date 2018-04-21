@@ -26,4 +26,16 @@ public class MainController {
         return "index";
     }
 
+    @RequestMapping(value = "/soon")
+    public String soon()
+    {
+        return "soon";
+    }
+
+    @RequestMapping(value = "/about-us")
+    public String aboutUs()
+    {
+        return "about-us";
+    }
+
 }

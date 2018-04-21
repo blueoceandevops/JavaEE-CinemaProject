@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $("#dateScroller")
     {
         var d0 = new Date();
