@@ -18,17 +18,54 @@
 <body>
 
 <div th:replace="~{fragments/header :: header}"></div>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-1"></div>
+        <div class="col-sm-12 col-md-10">
+            <div class="top-panel">
+                <h3>ПРО НАС</h3>
+            </div>
+            <div class="about-us-panel">
+                <h3>Ми знаходимось на вулиці Григорія Сковороди, 2</h3>
+                <div id="map"></div>
+                <h3>Ціна на квитки</h3>
+                <div class="price-info">
+                    <p>
+                        Для дорослих - 65 грн <br/>
+                        Для дітей (від 3 до 11 років) - 45 грн <br/>
+                        Пільговики - 50 грн
+                    </p>
+                </div>
+                <h3>Контакти</h3>
+                <div class="price-info">
+                    <p>
+                        За додатковою інформацією звертайтесь за телефоном
+                        <strong>222-222-222</strong> <br/>
+                        Скарги та пропозиції можна надіслати на електронну адресу
+                        <strong>cinema-project@gmail.com</strong>
+                    </p>
+                </div>
+             </div>
+            </div>
+        <div class="col-sm-12 col-md-1"></div>
+    </div>
+</div>
 <div th:replace="~{fragments/footer :: footer}"></div>
 
 <script src="webjars/jquery/2.1.4/jquery.min.js"
         th:src="@{webjars/jquery/2.1.4/jquery.min.js}"></script>
 <script src="webjars/less/2.7.2/less.min.js"
         th:src="@{webjars/less/2.7.2/less.min.js}"></script>
+
 <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"
         th:src="@{webjars/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 <script src="webjars/font-awesome/5.0.10/svg-with-js/js/fontawesome-all.min.js"
         th:src="@{webjars/font-awesome/5.0.10/svg-with-js/js/fontawesome-all.min.js}"></script>
 <script th:src="@{js/about-us.js}" src="static/js/about-us.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpxdJa6hBqjh0Ym9lkyRqd3hlfWW65bmg&callback=initMap"
+        th:src="@{https://maps.googleapis.com/maps/api/js?key=AIzaSyCpxdJa6hBqjh0Ym9lkyRqd3hlfWW65bmg&callback=initCinemaMap}"
+>
+</script>
 </body>
 </html>

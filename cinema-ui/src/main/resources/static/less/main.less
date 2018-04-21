@@ -64,7 +64,7 @@ div{
          text-transform: uppercase;
        }
      }
-    .soon-film-panel
+    .soon-film-panel, .about-us-panel
     {
       background-color: @light-gray;
       padding: 20px;
@@ -398,4 +398,36 @@ div{
 .disable-calendar
 {
   display: none !important;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+div
+{
+  .about-us-panel{
+    h3{
+      color: @main-orang;
+      font-size: 20px;
+      font-weight: 300;
+      padding: 10px;
+    }
+    .price-info
+    {
+      padding: 10px;
+      p{
+        text-align: left;
+        color: @main-black;
+        strong{
+          color: @main-orang;
+          font-size: 16px;
+          font-weight: 200;
+          padding: 5px;
+        }
+      }
+    }
+  }
 }
