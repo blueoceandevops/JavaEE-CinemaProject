@@ -56,6 +56,10 @@ div{
        padding: 10px;
        text-align: center;
        background-color: @main-orang;
+       color: @light-gray;
+       font-weight: 300;
+       font-size: 18px;
+       text-transform: uppercase;
        h3{
          color: white;
          font-weight: 300;
@@ -63,8 +67,16 @@ div{
          margin: 5px;
          text-transform: uppercase;
        }
+
+       h4{
+         color: white;
+         font-weight: 300;
+         font-size: 20px;
+         margin: 5px;
+         text-transform: uppercase;
+       }
      }
-    .soon-film-panel, .about-us-panel
+    .soon-film-panel, .about-us-panel, .buy-ticket-panel
     {
       background-color: @light-gray;
       padding: 20px;
@@ -429,5 +441,87 @@ div
         }
       }
     }
+  }
+}
+
+.buy-ticket-panel
+{
+  .cinemaHall {
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .seat {
+    height: 20px;
+    width: 15px;
+    margin-right: 5px;
+    background-color: @dark-gray;
+    display: inline-block;
+    border-radius: 5px ;
+    padding: 0px !important;
+  }
+
+  .seat:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .seat:hover{
+    filter: alpha(opacity=80);
+    opacity: 0.8\9;
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8);
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .passageBetween {
+    height: 1px;
+    width: 100%;
+    display: block;
+  }
+  .bay {
+    background-color: @main-orang;
+  }
+  .result {
+    font-size: 16px;
+    display: inline-block;
+    overflow-y: auto;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: @main-black;
+    width: 356px;
+
+    h3{
+      color: @main-orang;
+      font-size: 25px;
+      text-transform: uppercase;
+      font-weight: 200;
+    }
+    .result-prices{
+      .all-price{
+        padding: 10px;
+      }
+
+      a {
+        border: 3px solid @main-orang !important;
+        color: @main-orang !important;
+        display: inline-block;
+        font-weight: 300;
+        font-size: 20px;
+        padding: 10px 30px;
+        text-decoration: none;
+        vertical-align: middle;
+        margin: 10px;
+      }
+
+      a:hover{
+        border-color: @dark-orang !important;
+        color: @dark-orang !important;
+        background-color: transparent;
+      }
+    }
+
   }
 }
