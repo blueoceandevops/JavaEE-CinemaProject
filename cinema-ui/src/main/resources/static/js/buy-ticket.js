@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $(".bottom-menu .nav-link").removeClass("active");
     var price = 60;
     var cinemaHall1 = {
             row: [10, 20, 30, 30, 30, 30, 30, 30, 30, 30, 30]
@@ -11,7 +12,7 @@ $(document).ready(function () {
                 j + '" data-seat="' + i + '"' +
                 'data-toggle="tooltip"' +
                 'data-placement="top"' +
-                'title="Ряд - ' + j + '\nМісце - ' + i +'\nЦіна - ' + price + ' грн'+'">&nbsp;</button>';
+                'title="Ряд - ' + j + ' Місце - ' + i +'\nЦіна - ' + price + ' грн'+'">&nbsp;</button>';
         }
         cinemaHallMap += cinemaHallRow + '<div class="passageBetween">&nbsp;</div>';
         j++;
@@ -38,7 +39,7 @@ $(document).ready(function () {
         } else {
             $('.pay-button').removeClass('disabled');
         }
-        $('.all-price-count').text(k*price);
+        $('.all-price-count').text(k*price + ' грн');
         $('.result-places').html(result);
     }
 });

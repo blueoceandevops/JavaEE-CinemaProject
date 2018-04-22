@@ -50,6 +50,27 @@ body a:hover, a.active{
 
 
 div{
+
+    .gray-head-part
+    {
+      margin: 15px;
+      margin-bottom: 0px;
+      padding: 10px;
+      text-align: center;
+      background-color: @dark-gray;
+      color: white;
+      font-weight: 300;
+      font-size: 18px;
+      text-transform: uppercase;
+      h3{
+        color: white;
+        font-weight: 300;
+        font-size: 25px;
+        margin: 5px;
+        text-transform: uppercase;
+      }
+    }
+
      .top-panel
      {
        margin-top: 10px;
@@ -76,7 +97,7 @@ div{
          text-transform: uppercase;
        }
      }
-    .soon-film-panel, .about-us-panel, .buy-ticket-panel
+    .soon-film-panel, .about-us-panel, .buy-ticket-panel, .time-panel
     {
       background-color: @light-gray;
       padding: 20px;
@@ -523,5 +544,61 @@ div
       }
     }
 
+  }
+}
+
+.tooltip-inner {
+  white-space:pre-wrap;
+}
+
+.time-panel{
+  margin-left: 15px;
+  margin-right: 15px;
+
+  a {
+    border: 3px solid @main-orang !important;
+    color: @main-orang !important;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 10px;
+  }
+
+  a:hover{
+    border-color: @dark-orang !important;
+    color: @dark-orang !important;
+    background-color: transparent;
+  }
+}
+
+.about-movie-all
+{
+  margin-top: 20px;
+  padding: 10px;
+  color: @main-black;
+
+  .about-movie-text{
+    h3{
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 25px;
+      text-align: center;
+    }
+    strong{
+      text-transform: uppercase;
+      color: @dark-gray;
+      font-size: 14px;
+    }
+
+    .duration, .ganres{
+      text-align: center;
+    }
+
+    .description{
+      padding-top: 20px;
+    }
   }
 }
