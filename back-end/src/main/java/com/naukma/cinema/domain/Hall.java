@@ -5,27 +5,12 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Auditorium {
+public class Hall {
 
     @Id
     private Integer id;
 
     private String name;
-
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Auditorium that = (Auditorium) object;
-        return rows == that.rows &&
-                placesInRow == that.placesInRow &&
-                java.util.Objects.equals(name, that.name);
-    }
-
-    public int hashCode() {
-
-        return Objects.hash(super.hashCode(), name, rows, placesInRow);
-    }
 
     private int rows;
 
@@ -61,5 +46,19 @@ public class Auditorium {
 
     public void setPlacesInRow(int placesInRow) {
         this.placesInRow = placesInRow;
+    }
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Hall that = (Hall) object;
+        return rows == that.rows &&
+                placesInRow == that.placesInRow &&
+                java.util.Objects.equals(name, that.name);
+    }
+
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), name, rows, placesInRow);
     }
 }

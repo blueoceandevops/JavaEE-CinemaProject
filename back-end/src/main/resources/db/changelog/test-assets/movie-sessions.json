@@ -3,30 +3,30 @@
     "id":1,
     "movie_id":1,
     "start_date_time":"concat(current_date(),' 12:00:00')",
-    "auditorium_id":1
+    "hall_id":1
   },
   {
     "id":2,
     "movie_id":1,
     "start_date_time":"concat(current_date(),' 14:00:00')",
-    "auditorium_id":2
+    "hall_id":2
   },
   {
     "id":3,
     "movie_id":1,
     "start_date_time":"concat(current_date(),' 15:00:00')",
-    "auditorium_id":1
+    "hall_id":1
   },
   {
     "id":4,
     "movie_id":3,
     "start_date_time":"concat(current_date(),' 16:00:00')",
-    "auditorium_id":3
+    "hall_id":3
   },
   {
     "id":5,
     "movie_id":4,
     "start_date_time":"concat(current_date(),' 18:00:00')",
-    "auditorium_id":1
+    "hall_id":1
   }
 ]

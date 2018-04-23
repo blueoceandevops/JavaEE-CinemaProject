@@ -27,8 +27,8 @@
 
     <changeSet id="02-4" author="Veronika Rovnik">
         <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
-            <param name="file" value="db/changelog/test-assets/auditoriums.json"/>
-            <param name="tableName" value="auditorium"/>
+            <param name="file" value="db/changelog/test-assets/halls.json"/>
+            <param name="tableName" value="hall"/>
         </customChange>
     </changeSet>
 
