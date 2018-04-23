@@ -2,7 +2,6 @@ package com.naukma.cinema.service;
 
 import com.naukma.cinema.domain.MovieSession;
 import com.naukma.cinema.repository.MovieSessionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

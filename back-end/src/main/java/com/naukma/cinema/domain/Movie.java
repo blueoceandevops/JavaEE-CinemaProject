@@ -1,15 +1,8 @@
 package com.naukma.cinema.domain;
 
 import java.sql.Date;
-import java.sql.Time;
-import java.util.Collection;
-
-import javax.validation.constraints.NotNull;
-
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.util.List;
 import java.util.Objects;
 

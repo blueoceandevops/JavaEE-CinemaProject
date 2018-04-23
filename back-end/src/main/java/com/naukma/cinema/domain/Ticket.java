@@ -1,6 +1,5 @@
 package com.naukma.cinema.domain;
 
-import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
