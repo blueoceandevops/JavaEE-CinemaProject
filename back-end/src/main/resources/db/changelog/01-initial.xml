@@ -36,6 +36,18 @@
             <column name="cinema_release_end_date" type="date">
                 <constraints nullable="false"/>
             </column>
+            <column name="movie_poster_link" type="varchar(128)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="movie_trailer_link" type="varchar(128)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="movie_rating" type="INTEGER">
+                <constraints nullable="true"/>
+            </column>
+            <column name="age_restriction" type="INTEGER">
+                <constraints nullable="true"/>
+            </column>
         </createTable>
     </changeSet>
 
@@ -57,7 +69,7 @@
         <addPrimaryKey tableName="movie_map_genre"
                        columnNames="movie_id,genre_type"/>
     </changeSet>
-    
+
     <changeSet id="01-4" author="Veronika Rovnik">
         <createTable tableName="hall">
             <column name="id" type="INTEGER">

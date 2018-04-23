@@ -32,8 +32,6 @@ public class Movie {
     private String moviePosterLink;
     private String movieTrailerLink;
     private Integer movieRating;
-
-
     private Integer ageRestriction;
     @ManyToOne
     @JoinColumn(name = "av_movie_id")
