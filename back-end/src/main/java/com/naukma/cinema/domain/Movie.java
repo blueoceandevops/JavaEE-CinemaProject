@@ -16,6 +16,7 @@ import java.util.Objects;
 @Entity
 public class Movie {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "movie_seq")
     @SequenceGenerator(
 
@@ -28,8 +29,17 @@ public class Movie {
     private String title;
 
     private String originalTitle;
+    private String moviePosterLink;
+    private String movieTrailerLink;
+    private Integer movieRating;
 
+
+    private Integer ageRestriction;
+    @ManyToOne
+    @JoinColumn(name = "av_movie_id")
+    private AvailableMovie avMovie;
     public Movie() {
+
     }
 
     @ManyToMany
@@ -51,23 +61,27 @@ public class Movie {
         return id;
     }
 
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Movie movie = (Movie) object;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Movie movie = (Movie) o;
         return duration == movie.duration &&
-                java.util.Objects.equals(title, movie.title) &&
-                java.util.Objects.equals(originalTitle, movie.originalTitle) &&
-                java.util.Objects.equals(genres, movie.genres) &&
-                java.util.Objects.equals(releaseDate, movie.releaseDate) &&
-                java.util.Objects.equals(cinemaReleaseDate, movie.cinemaReleaseDate) &&
-                java.util.Objects.equals(cinemaReleaseEndDate, movie.cinemaReleaseEndDate);
+                Objects.equals(title, movie.title) &&
+                Objects.equals(originalTitle, movie.originalTitle) &&
+                Objects.equals(movieRating, movie.movieRating) &&
+                Objects.equals(ageRestriction, movie.ageRestriction) &&
+                Objects.equals(avMovie, movie.avMovie) &&
+                Objects.equals(genres, movie.genres) &&
+                Objects.equals(releaseDate, movie.releaseDate) &&
+                Objects.equals(cinemaReleaseDate, movie.cinemaReleaseDate) &&
+                Objects.equals(cinemaReleaseEndDate, movie.cinemaReleaseEndDate);
     }
 
+    @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), title, originalTitle, genres, duration, releaseDate, cinemaReleaseDate, cinemaReleaseEndDate);
+        return Objects.hash(title, originalTitle, movieRating, ageRestriction, avMovie, genres, duration, releaseDate, cinemaReleaseDate, cinemaReleaseEndDate);
     }
 
     public void setId(Integer id) {
@@ -131,4 +145,42 @@ public class Movie {
         this.cinemaReleaseEndDate = cinemaReleaseEndDate;
     }
 
+    public String getMoviePosterLink() {
+        return moviePosterLink;
+    }
+
+    public void setMoviePosterLink(String moviePosterLink) {
+        this.moviePosterLink = moviePosterLink;
+    }
+
+    public String getMovieTrailerLink() {
+        return movieTrailerLink;
+    }
+
+    public void setMovieTrailerLink(String movieTrailerLink) {
+        this.movieTrailerLink = movieTrailerLink;
+    }
+
+    public Integer getMovieRating() {
+        return movieRating;
+    }
+
+    public void setMovieRating(Integer movieRating) {
+        this.movieRating = movieRating;
+    }
+    public Integer getAgeRestriction() {
+        return ageRestriction;
+    }
+
+    public void setAgeRestriction(Integer ageRestriction) {
+        this.ageRestriction = ageRestriction;
+    }
+
+    public AvailableMovie getAvMovie() {
+        return avMovie;
+    }
+
+    public void setAvMovie(AvailableMovie avMovie) {
+        this.avMovie = avMovie;
+    }
 }

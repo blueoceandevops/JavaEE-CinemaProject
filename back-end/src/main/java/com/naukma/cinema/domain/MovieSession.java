@@ -20,7 +20,7 @@ public class MovieSession {
     private Movie movie;
 
     @ManyToOne
-    private Auditorium hall;
+    private Hall hall;
 
     public Integer getId() {
         return id;
@@ -38,11 +38,11 @@ public class MovieSession {
         this.movie = movie;
     }
 
-    public Auditorium getHall() {
+    public Hall getHall() {
         return hall;
     }
 
-    public void setHall(Auditorium hall) {
+    public void setHall(Hall hall) {
         this.hall = hall;
     }
 

@@ -59,7 +59,7 @@
     </changeSet>
     
     <changeSet id="01-4" author="Veronika Rovnik">
-        <createTable tableName="auditorium">
+        <createTable tableName="hall">
             <column name="id" type="INTEGER">
                 <constraints primaryKey="true"/>
             </column>
@@ -91,8 +91,8 @@
             </column>
             <column name="hall_id" type="INTEGER">
                 <constraints nullable="false"
-                             foreignKeyName="movie_session_ref_auditorium"
-                             referencedTableName="auditorium"
+                             foreignKeyName="movie_session_ref_hall"
+                             referencedTableName="hall"
                              referencedColumnNames="id"/>
             </column>
         </createTable>
