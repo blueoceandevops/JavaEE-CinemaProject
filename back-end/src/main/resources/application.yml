@@ -8,7 +8,7 @@ spring:
     jpa:
         properties:
             hibernate:
-                dialect: com.naukma.cinema.config.H2DialectCustom
+                dialect: H2DialectCustom
         hibernate:
             ddl-auto: validate
     liquibase:
