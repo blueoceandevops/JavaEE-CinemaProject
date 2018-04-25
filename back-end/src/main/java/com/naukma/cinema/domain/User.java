@@ -28,9 +28,6 @@ public class User {
         this.email = email;
     }
 
-    public User() {
-    }
-
     public boolean equals(Object object) {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
@@ -41,7 +38,6 @@ public class User {
     }
 
     public int hashCode() {
-
         return Objects.hash(super.hashCode(), id, email);
     }
 }

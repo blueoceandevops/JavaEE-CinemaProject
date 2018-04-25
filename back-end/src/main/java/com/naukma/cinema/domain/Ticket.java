@@ -1,6 +1,5 @@
 package com.naukma.cinema.domain;
 
-import org.hibernate.annotations.GenericGenerator;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -8,6 +7,7 @@ import javax.persistence.*;
 
 @Entity
 public class Ticket {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ticket_seq")
     @SequenceGenerator(
@@ -28,27 +28,8 @@ public class Ticket {
 
     private LocalDateTime sellTime;
 
-    public Ticket() {
-    }
-
     public Integer getId() {
         return id;
-    }
-
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Ticket ticket = (Ticket) object;
-        return java.util.Objects.equals(movieSession, ticket.movieSession) &&
-                java.util.Objects.equals(user, ticket.user) &&
-                java.util.Objects.equals(occupiedSeat, ticket.occupiedSeat) &&
-                java.util.Objects.equals(sellTime, ticket.sellTime);
-    }
-
-    public int hashCode() {
-
-        return Objects.hash(super.hashCode(), movieSession, user, occupiedSeat, sellTime);
     }
 
     public void setId(Integer id) {
@@ -87,4 +68,18 @@ public class Ticket {
         this.sellTime = sellTime;
     }
 
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Ticket ticket = (Ticket) object;
+        return Objects.equals(movieSession, ticket.movieSession) &&
+                Objects.equals(user, ticket.user) &&
+                Objects.equals(occupiedSeat, ticket.occupiedSeat) &&
+                Objects.equals(sellTime, ticket.sellTime);
+    }
+
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), movieSession, user, occupiedSeat, sellTime);
+    }
 }

@@ -1,4 +1,7 @@
 package com.naukma.cinema.repository;
 
-public interface TicketRepository {
+import com.naukma.cinema.domain.Ticket;
+import org.springframework.data.repository.CrudRepository;
+
+public interface TicketRepository extends CrudRepository<Ticket, Integer> {
 }

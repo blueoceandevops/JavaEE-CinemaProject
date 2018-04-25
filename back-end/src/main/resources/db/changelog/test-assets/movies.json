@@ -6,7 +6,11 @@
     "duration":120,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-01-01",
-    "cinema_release_end_date":"2018-01-01"
+    "cinema_release_end_date":"2018-01-01",
+    "movie_poster_link":"",
+    "movie_trailer_link":"",
+    "movie_rating":4,
+    "age_restriction":16
   },
   {
     "id":2,
@@ -15,7 +19,11 @@
     "duration":12,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-01-01",
-    "cinema_release_end_date":"2018-01-01"
+    "cinema_release_end_date":"2018-01-01",
+    "movie_poster_link":"",
+    "movie_trailer_link":"",
+    "movie_rating":4,
+    "age_restriction":16
   },
   {
     "id":3,
@@ -24,15 +32,23 @@
     "duration":122,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-03-01",
-    "cinema_release_end_date":"2018-05-01"
+    "cinema_release_end_date":"2018-05-01",
+    "movie_poster_link":"",
+    "movie_trailer_link":"",
+    "movie_rating":4,
+    "age_restriction":16
   },
   {
     "id":4,
-    "title":"Any test",
-    "original_title":"Any",
+    "title":"Star Wars",
+    "original_title":"Star Wars: Episode IV - A New Hope",
     "duration":100,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-02-01",
-    "cinema_release_end_date":"2018-05-21"
+    "cinema_release_end_date":"2018-05-21",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    "movie_trailer_link":"",
+    "movie_rating":4,
+    "age_restriction":16
   }
 ]
