@@ -1,14 +1,13 @@
-package com.controller;
+package com.naukma.cinema.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class AboutMovieController {
-
-    @RequestMapping(value = "/about-movie")
+public class BuyTicketController {
+    @RequestMapping(value = "/buy-ticket")
     public String about()
     {
-        return "about-movie";
+        return "buy-ticket";
     }
 }
