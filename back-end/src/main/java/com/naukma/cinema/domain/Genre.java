@@ -9,20 +9,6 @@ import java.util.Objects;
 @Entity
 public class Genre {
 
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        if (!super.equals(object)) return false;
-        Genre genre = (Genre) object;
-        return java.util.Objects.equals(type, genre.type) &&
-                java.util.Objects.equals(name, genre.name);
-    }
-
-    public int hashCode() {
-
-        return Objects.hash(super.hashCode(), type, name);
-    }
-
     @Id
     @Enumerated(EnumType.STRING)
     private GenreType type;
@@ -43,5 +29,18 @@ public class Genre {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Genre genre = (Genre) object;
+        return java.util.Objects.equals(type, genre.type) &&
+                java.util.Objects.equals(name, genre.name);
+    }
+
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), type, name);
     }
 }

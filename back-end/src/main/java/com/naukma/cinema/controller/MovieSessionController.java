@@ -14,10 +14,10 @@ import java.util.List;
 public class MovieSessionController {
 
     private final MovieSessionService movieSessionService;
+
     public MovieSessionController(MovieSessionService movieSessionService) {
         this.movieSessionService = movieSessionService;
     }
-
 
     @GetMapping("{id}/today")
     public List<MovieSession> getAllParticularMovieSessionsForToday(@PathVariable Integer id) {

@@ -158,32 +158,27 @@
             <column name="seat" type="INTEGER">
                 <constraints nullable="false"/>
             </column>
-        </createTable>
-        <addUniqueConstraint tableName="occupied_seat"
-                             columnNames="row,seat"/>
-    </changeSet>
-
-    <changeSet id="01-9" author="Veronika Rovnik">
-        <createTable tableName="movie_session_map_occupied_seat">
             <column name="movie_session_id" type="INTEGER">
                 <constraints nullable="false"
-                             foreignKeyName="movie_session_map_seat_ref_movie_session"
+                             foreignKeyName="fsdfsf"
                              referencedTableName="movie_session"
                              referencedColumnNames="id"/>
             </column>
-            <column name="occupied_seat_id" type="INTEGER">
-                <constraints nullable="false"
-                             foreignKeyName="movie_session_map_seat_ref_seat"
-                             referencedTableName="occupied_seat"
-                             referencedColumnNames="id"/>
-            </column>
         </createTable>
-        <addPrimaryKey tableName="movie_session_map_occupied_seat"
-                       columnNames="movie_session_id,occupied_seat_id"/>
+        <addUniqueConstraint tableName="occupied_seat"
+                             columnNames="row,seat,movie_session_id"/>
     </changeSet>
 
-    <changeSet id="09" author="Veronika Rovnik">
+    <changeSet id="01-9" author="Veronika Rovnik">
         <createSequence sequenceName="movie_sequence"/>
+    </changeSet>
+
+    <changeSet id="01-10" author="Veronika Rovnik">
+        <createSequence sequenceName="ticket_sequence"/>
+    </changeSet>
+
+    <changeSet id="01-11" author="Veronika Rovnik">
+        <createSequence sequenceName="occupied_seat_sequence"/>
     </changeSet>
 
 </databaseChangeLog>

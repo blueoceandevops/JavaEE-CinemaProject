@@ -18,6 +18,7 @@ import liquibase.resource.ResourceAccessor;
 import liquibase.statement.DatabaseFunction;
 import liquibase.statement.SqlStatement;
 import liquibase.statement.core.InsertStatement;
+
 public class JsonInsertCustomChange implements CustomSqlChange {
 
     private String file;

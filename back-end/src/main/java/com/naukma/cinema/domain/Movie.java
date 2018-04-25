@@ -1,18 +1,16 @@
 package com.naukma.cinema.domain;
 
-import java.sql.Date;
-
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
 public class Movie {
+
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "movie_seq")
     @SequenceGenerator(
-
             name = "movie_seq",
             sequenceName = "movie_sequence",
             allocationSize = 1
@@ -22,16 +20,14 @@ public class Movie {
     private String title;
 
     private String originalTitle;
-    private String moviePosterLink;
-    private String movieTrailerLink;
-    private Integer movieRating;
-    private Integer ageRestriction;
-    @ManyToOne
-    @JoinColumn(name = "av_movie_id")
-    private AvailableMovie avMovie;
-    public Movie() {
 
-    }
+    private String moviePosterLink;
+
+    private String movieTrailerLink;
+
+    private Integer movieRating;
+
+    private Integer ageRestriction;
 
     @ManyToMany
     @JoinTable(
@@ -48,36 +44,13 @@ public class Movie {
     private Date cinemaReleaseDate;
 
     private Date cinemaReleaseEndDate;
+
     public Integer getId() {
         return id;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Movie movie = (Movie) o;
-        return duration == movie.duration &&
-                Objects.equals(title, movie.title) &&
-                Objects.equals(originalTitle, movie.originalTitle) &&
-                Objects.equals(movieRating, movie.movieRating) &&
-                Objects.equals(ageRestriction, movie.ageRestriction) &&
-                Objects.equals(avMovie, movie.avMovie) &&
-                Objects.equals(genres, movie.genres) &&
-                Objects.equals(releaseDate, movie.releaseDate) &&
-                Objects.equals(cinemaReleaseDate, movie.cinemaReleaseDate) &&
-                Objects.equals(cinemaReleaseEndDate, movie.cinemaReleaseEndDate);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(title, originalTitle, movieRating, ageRestriction, avMovie, genres, duration, releaseDate, cinemaReleaseDate, cinemaReleaseEndDate);
-    }
-
     public void setId(Integer id) {
         this.id = id;
-
     }
 
     public String getTitle() {
@@ -159,6 +132,7 @@ public class Movie {
     public void setMovieRating(Integer movieRating) {
         this.movieRating = movieRating;
     }
+
     public Integer getAgeRestriction() {
         return ageRestriction;
     }
@@ -167,11 +141,25 @@ public class Movie {
         this.ageRestriction = ageRestriction;
     }
 
-    public AvailableMovie getAvMovie() {
-        return avMovie;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Movie movie = (Movie) o;
+        return duration == movie.duration &&
+                Objects.equals(title, movie.title) &&
+                Objects.equals(originalTitle, movie.originalTitle) &&
+                Objects.equals(movieRating, movie.movieRating) &&
+                Objects.equals(ageRestriction, movie.ageRestriction) &&
+                Objects.equals(genres, movie.genres) &&
+                Objects.equals(releaseDate, movie.releaseDate) &&
+                Objects.equals(cinemaReleaseDate, movie.cinemaReleaseDate) &&
+                Objects.equals(cinemaReleaseEndDate, movie.cinemaReleaseEndDate);
     }
 
-    public void setAvMovie(AvailableMovie avMovie) {
-        this.avMovie = avMovie;
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, originalTitle, movieRating, ageRestriction, genres, duration, releaseDate,
+                cinemaReleaseDate, cinemaReleaseEndDate);
     }
 }
