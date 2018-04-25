@@ -5,42 +5,42 @@
                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <changeSet id="02-1" author="Veronika Rovnik">
-        <customChange class="com.config.liquibase.JsonInsertCustomChange">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
             <param name="file" value="db/changelog/test-assets/genres.json"/>
             <param name="tableName" value="genre"/>
         </customChange>
     </changeSet>
 
     <changeSet id="02-2" author="Veronika Rovnik">
-        <customChange class="com.config.liquibase.JsonInsertCustomChange">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
             <param name="file" value="db/changelog/test-assets/movies.json"/>
             <param name="tableName" value="movie"/>
         </customChange>
     </changeSet>
 
     <changeSet id="02-3" author="Veronika Rovnik">
-        <customChange class="com.config.liquibase.JsonInsertCustomChange">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
             <param name="file" value="db/changelog/test-assets/users.json"/>
             <param name="tableName" value="user"/>
         </customChange>
     </changeSet>
 
     <changeSet id="02-4" author="Veronika Rovnik">
-        <customChange class="com.config.liquibase.JsonInsertCustomChange">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
             <param name="file" value="db/changelog/test-assets/halls.json"/>
             <param name="tableName" value="hall"/>
         </customChange>
     </changeSet>
 
     <changeSet id="02-5" author="Veronika Rovnik">
-        <customChange class="com.config.liquibase.JsonInsertCustomChange">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
             <param name="file" value="db/changelog/test-assets/movie-sessions.json"/>
             <param name="tableName" value="movie_session"/>
         </customChange>
     </changeSet>
 
     <changeSet id="02-6" author="Veronika Rovnik">
-        <customChange class="com.config.liquibase.JsonInsertCustomChange">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
             <param name="file" value="db/changelog/test-assets/movies-map-genres.json"/>
             <param name="tableName" value="movie_map_genre"/>
         </customChange>

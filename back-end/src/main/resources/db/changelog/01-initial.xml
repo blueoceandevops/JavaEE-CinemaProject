@@ -42,7 +42,7 @@
             <column name="movie_trailer_link" type="varchar(128)">
                 <constraints nullable="true"/>
             </column>
-            <column name="movie_rating" type="INTEGER">
+            <column name="movie_rating" type="DOUBLE">
                 <constraints nullable="true"/>
             </column>
             <column name="age_restriction" type="INTEGER">
