@@ -36,10 +36,10 @@
             <column name="cinema_release_end_date" type="date">
                 <constraints nullable="false"/>
             </column>
-            <column name="movie_poster_link" type="varchar(128)">
+            <column name="movie_poster_link" type="varchar(256)">
                 <constraints nullable="true"/>
             </column>
-            <column name="movie_trailer_link" type="varchar(128)">
+            <column name="movie_trailer_link" type="varchar(256)">
                 <constraints nullable="true"/>
             </column>
             <column name="movie_rating" type="DOUBLE">
