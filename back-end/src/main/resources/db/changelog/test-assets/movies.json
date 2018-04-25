@@ -1,54 +1,67 @@
 [
   {
     "id":1,
-    "title":"Any",
-    "original_title":"Any",
-    "duration":120,
+    "title":"Кролик Петрик",
+    "original_title":"Peter the Rabbit",
+    "duration":95,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-01-01",
     "cinema_release_end_date":"2018-01-01",
-    "movie_poster_link":"",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BOWE4YzE3Y2MtYzIyZS00NjA4LTliMDgtY2U0NGM2NzI4MjZlXkEyXkFqcGdeQXVyNTU5Mzk0NjE@._V1_.jpg",
     "movie_trailer_link":"",
-    "movie_rating":4,
-    "age_restriction":16
+    "movie_rating":6.4,
+    "age_restriction":12
   },
   {
     "id":2,
-    "title":"Any other",
-    "original_title":"Any",
+    "title":"Першому гравцю приготуватися",
+    "original_title":"Ready Player One",
     "duration":12,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-01-01",
     "cinema_release_end_date":"2018-01-01",
-    "movie_poster_link":"",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BY2JiYTNmZTctYTQ1OC00YjU4LWEwMjYtZjkwY2Y5MDI0OTU3XkEyXkFqcGdeQXVyNTI4MzE4MDU@._V1_SX300.jpg",
     "movie_trailer_link":"",
-    "movie_rating":4,
-    "age_restriction":16
+    "movie_rating":8.1,
+    "age_restriction":13
   },
   {
     "id":3,
-    "title":"Test",
-    "original_title":"Any",
+    "title":"Тебе тут ніколи не було",
+    "original_title":"You Were Never Really Here",
     "duration":122,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-03-01",
     "cinema_release_end_date":"2018-05-01",
-    "movie_poster_link":"",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BMDkwOTE0ZjMtZmRiYS00M2M3LWE3MzUtNzNmNmExNTNmNjg5XkEyXkFqcGdeQXVyODE1MjMyNzI@._V1_SY1000_SX675_AL_.jpg",
     "movie_trailer_link":"",
-    "movie_rating":4,
-    "age_restriction":16
+    "movie_rating":7.0,
+    "age_restriction":18
   },
   {
     "id":4,
-    "title":"Star Wars",
-    "original_title":"Star Wars: Episode IV - A New Hope",
-    "duration":100,
+    "title":"Форма води",
+    "original_title":"The Shape of Water",
+    "duration":123,
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-02-01",
     "cinema_release_end_date":"2018-05-21",
-    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BNGNiNWQ5M2MtNGI0OC00MDA2LWI5NzEtMmZiYjVjMDEyOWYzXkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
     "movie_trailer_link":"",
-    "movie_rating":4,
+    "movie_rating":7.5,
+    "age_restriction":16
+  },
+  {
+    "id":6,
+    "title":"Коко",
+    "original_title":"Coco",
+    "duration":105,
+    "release_date":"2018-01-01",
+    "cinema_release_date":"2018-02-01",
+    "cinema_release_end_date":"2018-05-21",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BYjQ5NjM0Y2YtNjZkNC00ZDhkLWJjMWItN2QyNzFkMDE3ZjAxXkEyXkFqcGdeQXVyODIxMzk5NjA@._V1_SY1000_CR0,0,699,1000_AL_.jpg",
+    "movie_trailer_link":"",
+    "movie_rating":7.5,
     "age_restriction":16
   }
 ]
