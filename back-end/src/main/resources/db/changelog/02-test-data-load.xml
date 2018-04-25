@@ -46,4 +46,18 @@
         </customChange>
     </changeSet>
 
+    <changeSet id="02-8" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/tickets.json"/>
+            <param name="tableName" value="ticket"/>
+        </customChange>
+    </changeSet>
+
+    <changeSet id="02-9" author="Veronika Rovnik">
+        <customChange class="com.naukma.cinema.config.liquibase.JsonInsertCustomChange">
+            <param name="file" value="db/changelog/test-assets/occupied-seats.json"/>
+            <param name="tableName" value="occupied_seat"/>
+        </customChange>
+    </changeSet>
+
 </databaseChangeLog>

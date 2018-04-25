@@ -1,0 +1,9 @@
+[
+  {
+    "id":1,
+    "movie_session_id":1,
+    "user_id":1,
+    "sell_time":"concat(current_date(),' 12:00:00')",
+    "occupied_seat_id":1
+  }
+]

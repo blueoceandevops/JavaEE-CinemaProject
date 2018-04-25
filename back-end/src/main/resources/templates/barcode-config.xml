@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<barcode>
+    <pdf417>
+        <module-width>0.5mm</module-width>
+    </pdf417>
+</barcode>
