@@ -7,10 +7,9 @@ spring:
         password:
     jpa:
         properties:
-            hibernate:
-                dialect: H2DialectCustom
+          hibernate.dialect: com.naukma.cinema.config.H2DialectCustom
         hibernate:
-            ddl-auto: validate
+          ddl-auto: validate
     liquibase:
         change-log: classpath:/db/db-changelog.xml
 
