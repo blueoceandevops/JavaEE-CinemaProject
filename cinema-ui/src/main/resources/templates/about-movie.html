@@ -50,7 +50,7 @@
                <div class="gray-head-part">Розклад</div>
                <div th:replace="~{fragments/calendar :: calendar}"></div>
                <div class="time-panel" th:each="se : ${currentMovieSession}">
-                   <a href="#" class="btn btn-outline-secondary" th:text="${se.startDateTime.getHour()+':'+se.startDateTime.getMinute()}">12:00</a>
+                   <a href="#" class="btn btn-outline-secondary" th:text="${se.startDateTime.getHour()+':00'}">12:00</a>
                </div>
            </div>
         </div>

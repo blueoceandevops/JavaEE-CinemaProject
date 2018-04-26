@@ -24,7 +24,9 @@ public class AboutMovieController {
     {
         System.out.println(id);
         List<MovieSession> currentMovieSession = movieSessionService.getAllMovieSessionsForTodayByMovieId(id);
-        System.out.println(currentMovieSession.toString());
+        for(MovieSession movieSession: currentMovieSession){
+            System.out.println(movieSession.getMovie().getId() + movieSession.getMovie().getTitle());
+        }
         if(currentMovieSession.size() > 0){
             Movie currentMovie = currentMovieSession.get(0).getMovie();
             model.put("currentMovie", currentMovie);
