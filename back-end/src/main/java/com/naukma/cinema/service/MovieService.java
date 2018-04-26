@@ -18,4 +18,7 @@ public class MovieService {
     public List<Movie> getAllRunningMovies() {
         return movieRepository.findAllRunningMovies();
     }
+    public List<Movie> getAllFutureMovies() {
+        return movieRepository.findAllFutureMovies();
+    }
 }
