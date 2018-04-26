@@ -52,13 +52,13 @@
                 <nav class="navbar sort-panel">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link active" movieSessionId="by-date" href="#">
+                            <a class="nav-link active" id="by-date" href="#">
                                 <span class="fas fa-calendar-alt"></span>
                                 <span>за датою</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" movieSessionId="by-film" href="#">
+                            <a class="nav-link" id="by-film" href="#">
                                 <span class="fas fa-film"></span>
                                 <span>за фільмами</span>
                             </a>
@@ -66,26 +66,25 @@
                     </ul>
                     <ul class="nav justify-content-end">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" movieSessionId="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Сортувати
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" movieSessionId="by-time" href="#">за часом</a>
-                                <a class="dropdown-item" movieSessionId="by-alphabet" href="#">за алфавітом</a>
-                                <a class="dropdown-item" movieSessionId="by-new" href="#">за новизною</a>
+                                <a class="dropdown-item" id="by-alphabet" href="#">за алфавітом</a>
+                                <a class="dropdown-item" id="by-new" href="#">за новизною</a>
                             </div>
                         </li>
                     </ul>
                 </nav>
                 <div th:replace="~{fragments/calendar :: calendar}"></div>
-               <div class="all-films" th:each="movie : ${movies}" th:unless="${movies == null}">
-                    <div class="one-film">
+               <div class="all-films" >
+                    <div class="one-film"th:each="movie : ${movies}" th:unless="${movies == null}" data-th-title="${movie.title}" data-th-id="${movie.id}" data-th-date="${movie.cinemaReleaseDate}">
                         <div class="row">
                             <div class="col-md-3">
                                 <img class="poster" th:src="${movie.moviePosterLink}" alt="Film">
                             </div>
-                            <div class="col-md-6 text-left film-text" data-id="${movie.id}">
+                            <div class="col-md-6 text-left film-text">
                                 <h5 class="film-name" th:text="${movie.title}">Месники: війна нескінченності</h5>
                                 <span class="time" th:text="${movie.duration} + ' хв.'">134 хв.</span>
                                 <p class="description" th:text="${movie.title}">
@@ -116,6 +115,7 @@
         th:src="@{webjars/bootstrap/4.0.0/js/bootstrap.min.js}"></script>
 <script src="webjars/font-awesome/5.0.10/svg-with-js/js/fontawesome-all.min.js"
         th:src="@{webjars/font-awesome/5.0.10/svg-with-js/js/fontawesome-all.min.js}"></script>
+<script th:src="@{js/api.js}" src="static/js/api.js"></script>
 <script th:src="@{js/main.js}" src="static/js/main.js"></script>
 </body>
 </html>
