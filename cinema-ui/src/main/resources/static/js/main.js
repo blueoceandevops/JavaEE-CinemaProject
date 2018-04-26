@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     var first = $( '.carousel-item' ).filter( ':first' );
     first.addClass("active");
@@ -49,10 +50,7 @@ $(document).ready(function(){
         $(".nav-link").removeClass("active");
         $(this).addClass("active");
         $(".calendar").addClass("disable-calendar");
-    });
-
-    $("#by-time").click(function () {
-        sortByTime();
+        getByFilm();
     });
 
     $("#by-new").click(function () {
@@ -60,10 +58,44 @@ $(document).ready(function(){
     });
 
     $("#by-alphabet").click(function () {
-        sortByAlfabet();
+        sortByAlphabet();
     });
 
 });
+
+
+function sortByAlphabet(){
+
+    var films = jQuery.makeArray($('.one-film'));
+    films.sort(function f(a, b) {
+        a = $(a).attr('title');
+        b = $(b).attr('title');
+        var c = 0;
+        if (a > b) c = 1;
+        if (a < b) c = -1;
+        return c;
+    });
+    $(".all-films").html("");
+    films.forEach(function (div) {
+        $(".all-films").append(div);
+    });
+}
+
+function sortByNew() {
+    var films = jQuery.makeArray($(".one-film"));
+    films.sort(function f(a, b) {
+        a = $(a).attr('date');
+        b = $(b).attr('date');
+        var c = 0;
+        if (a > b) c = 1;
+        if (a < b) c = -1;
+        return c;
+    });
+    $(".all-films").html("");
+    films.forEach(function (div) {
+        $(".all-films").append(div);
+    });
+}
 
 function getWeekDay(date) {
     var days = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
