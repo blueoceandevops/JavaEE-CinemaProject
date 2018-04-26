@@ -33,7 +33,7 @@
     "release_date":"2018-01-01",
     "cinema_release_date":"2018-03-01",
     "cinema_release_end_date":"2018-05-01",
-    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BMDkwOTE0ZjMtZmRiYS00M2M3LWE3MzUtNzNmNmExNTNmNjg5XkEyXkFqcGdeQXVyODE1MjMyNzI@._V1_SY1000_SX675_AL_.jpg",
+    "movie_poster_link":"https://dx35vtwkllhj9.cloudfront.net/amazonstudios/you-were-never-really-here/images/regions/us/200x200.png",
     "movie_trailer_link":"",
     "movie_rating":7.0,
     "age_restriction":18
@@ -63,5 +63,18 @@
     "movie_trailer_link":"",
     "movie_rating":7.5,
     "age_restriction":16
+  },
+  {
+    "id":7,
+    "title":"Тихе мiсце",
+    "original_title":"A Quiet Place",
+    "duration":80,
+    "release_date":"2018-01-01",
+    "cinema_release_date":"2018-02-01",
+    "cinema_release_end_date":"2018-05-21",
+    "movie_poster_link":"https://weliveentertainment.com/wp-content/uploads/2018/03/AQP_Online_Teaser_Vertical-e1520662554542.jpg",
+    "movie_trailer_link":"",
+    "movie_rating":7.5,
+    "age_restriction":18
   }
 ]
