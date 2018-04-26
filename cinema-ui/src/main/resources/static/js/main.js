@@ -60,7 +60,6 @@ $(document).ready(function(){
     $("#by-alphabet").click(function () {
         sortByAlphabet();
     });
-
 });
 
 

@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-sm-12 col-md-1"></div>
         <div class="col-sm-12 col-md-10">
-            <div class="about-movie-all">
+            <div class="about-movie-all" th:unless="${currentMovie == null}">
                 <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="about-movie-img">
@@ -31,11 +31,13 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="about-movie-text">
-                        <h3>Месники: Війна Нескінченності</h3>
+                        <h3 th:text="${currentMovie.title}">Месники: Війна Нескінченності</h3>
                         <hr/>
-                        <div class="duration"><strong>134 хв.</strong></div>
-                        <div class="ganres"><strong> Фантастика бойвик драма</strong></div>
-                        <p class="description">
+                        <div class="duration" th:text="${currentMovie.title}"><strong>134 хв.</strong></div>
+                        <div class="ganres" th:each="genre : ${currentMovie.genres}">
+                            <strong th:text="${genre.name}"> Фантастика бойвик драма</strong>
+                        </div>
+                        <p class="description" th:text="${currentMovie.title}">
                             До цього йшли всі події. Поки супергерої на Землі і за її межами боролися проти злодіїв,
                             кожен з яких прагнув влади, хаосу або знищень, за всім цим спостерігав грізний титан
                             Танос. Але тепер його час вийти на сцену.
@@ -44,11 +46,11 @@
                 </div>
                 </div>
             </div>
-           <div class="time-map">
+           <div class="time-map" th:unless="${currentMovieSession == null}">
                <div class="gray-head-part">Розклад</div>
                <div th:replace="~{fragments/calendar :: calendar}"></div>
-               <div class="time-panel">
-                   <a href="#" class="btn btn-outline-secondary">12:00</a>
+               <div class="time-panel" th:each="session : ${currentMovieSession}">
+                   <a href="#" class="btn btn-outline-secondary" th:text="${session.startDateTime}">12:00</a>
                </div>
            </div>
         </div>

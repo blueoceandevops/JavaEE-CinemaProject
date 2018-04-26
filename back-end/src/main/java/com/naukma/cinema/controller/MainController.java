@@ -7,6 +7,7 @@ import com.naukma.cinema.service.MovieSessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.WebContext;
@@ -64,7 +65,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/by-date")
-    public @ResponseBody List<Movie>  byDate()
+    public @ResponseBody List<Movie>  byDate(@RequestParam(value = "date") Date date)
     {
         movies = movieService.getAllRunningMovies();
         for(Movie movie : movies){
