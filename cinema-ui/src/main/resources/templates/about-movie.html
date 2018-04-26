@@ -26,16 +26,16 @@
                 <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="about-movie-img">
-                        <img src="/static/images/2.jpg" th:src="@{images/2.jpg}">
+                        <img src="/static/images/2.jpg" th:src="${currentMovie.moviePosterLink}">
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="about-movie-text">
                         <h3 th:text="${currentMovie.title}">Месники: Війна Нескінченності</h3>
                         <hr/>
-                        <div class="duration" th:text="${currentMovie.title}"><strong>134 хв.</strong></div>
-                        <div class="ganres" th:each="genre : ${currentMovie.genres}">
-                            <strong th:text="${genre.name}"> Фантастика бойвик драма</strong>
+                        <div class="duration" th:text="${currentMovie.duration} + ' хв.'"><strong>134 хв.</strong></div>
+                        <div class="ganres">
+                            <strong  th:each="genre : ${currentMovie.genres}" th:text="${genre.name} + '&nbsp;'"> Фантастика бойвик драма</strong>
                         </div>
                         <p class="description" th:text="${currentMovie.title}">
                             До цього йшли всі події. Поки супергерої на Землі і за її межами боролися проти злодіїв,
@@ -49,8 +49,8 @@
            <div class="time-map" th:unless="${currentMovieSession == null}">
                <div class="gray-head-part">Розклад</div>
                <div th:replace="~{fragments/calendar :: calendar}"></div>
-               <div class="time-panel" th:each="session : ${currentMovieSession}">
-                   <a href="#" class="btn btn-outline-secondary" th:text="${session.startDateTime}">12:00</a>
+               <div class="time-panel" th:each="se : ${currentMovieSession}">
+                   <a href="#" class="btn btn-outline-secondary" th:text="${se.startDateTime.getHour()+':'+se.startDateTime.getMinute()}">12:00</a>
                </div>
            </div>
         </div>
