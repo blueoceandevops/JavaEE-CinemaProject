@@ -4,5 +4,7 @@ public enum GenreType {
     DRAMA,
     COMEDY,
     SCIENCE_FICTION,
-    THRILLER
+    THRILLER,
+    CARTOON,
+    HORROR
 }

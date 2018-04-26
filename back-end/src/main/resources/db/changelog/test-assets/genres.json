@@ -14,5 +14,13 @@
   {
     "type":"THRILLER",
     "name":"Thriller"
+  },
+  {
+    "type":"CARTOON",
+    "name":"Cartoon"
+  },
+  {
+    "type":"HORROR",
+    "name":"Horror"
   }
 ]

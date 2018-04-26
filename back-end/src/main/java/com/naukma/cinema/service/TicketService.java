@@ -53,13 +53,13 @@ public class TicketService {
         return new ByteArrayInputStream(outputStream.toByteArray());
     }
 
-    /*Check if values are appropriate (using ValueHandlerFactory class)*/
     private void validateBuyParams(String sessionId, String row, String place) {
         validateNumericParam(sessionId);
         validateNumericParam(row);
         validateNumericParam(place);
     }
 
+    /*Check if values are appropriate (using ValueHandlerFactory class)*/
     private void validateNumericParam(String param) {
         if (!isNumeric(param)) {
             throw new IllegalArgumentException();
