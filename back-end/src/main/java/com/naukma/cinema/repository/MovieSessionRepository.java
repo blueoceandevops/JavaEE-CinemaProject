@@ -21,4 +21,8 @@ public interface MovieSessionRepository extends CrudRepository<MovieSession, Int
             "WHERE CAST(s.startDateTime AS date) = (:day) " +
             "AND s.movie.id IN (:ids)")
     List<MovieSession> findAllMovieSessionsByDayAndMovieIds(Date day, Set<Integer> ids);
+    
+    @Query("FROM MovieSession s " +
+            "WHERE CAST(s.startDateTime AS date) = (:day) ")
+    List<MovieSession> findAllMovieSessionsByDay(Date day);
 }
