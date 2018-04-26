@@ -28,4 +28,8 @@ public class MovieSessionController {
     public List<MovieSession> getAllMovieSessionsForToday() {
         return movieSessionService.getAllMovieSessionsForToday();
     }
+    @GetMapping("{id}")
+    public MovieSession getById(@PathVariable Integer id) {
+        return movieSessionService.getById(id);
+    }
 }

@@ -4,21 +4,15 @@ import com.naukma.cinema.domain.MovieSession;
 import com.naukma.cinema.domain.OccupiedSeat;
 import com.naukma.cinema.domain.Ticket;
 import com.naukma.cinema.repository.TicketRepository;
-
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import static java.lang.Integer.parseInt;
-import static org.hibernate.query.criteria.internal.ValueHandlerFactory.isNumeric;
 
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.util.Optional;
-import javax.servlet.http.HttpServletResponse;
-
+import static java.lang.Integer.parseInt;
+import static org.hibernate.query.criteria.internal.ValueHandlerFactory.isNumeric;
 @Service
 public class TicketService {
 
