@@ -14,7 +14,6 @@ import org.thymeleaf.context.Context;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.util.Base64;
-
 import javax.imageio.ImageIO;
 
 import static org.apache.commons.lang.StringUtils.leftPad;
