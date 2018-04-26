@@ -24,9 +24,9 @@ public class MovieSessionService {
         this.movieService = movieService;
     }
 
-    public List<MovieSession> getAllMovieSessionsForTodayByMovieId(Integer id) {
-        requireNonNull(id);
-        return repository.findAllMovieSessionsForTodayByMovieIds(newHashSet(id));
+    public List<MovieSession> getAllMovieSessionsForTodayByMovieIds(Set <Integer> ids) {
+        requireNonNull(ids);
+        return repository.findAllMovieSessionsForTodayByMovieIds(newHashSet(ids));
     }
 
     public List<MovieSession> getAllMovieSessionsForToday() {
