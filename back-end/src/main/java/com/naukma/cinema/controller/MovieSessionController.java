@@ -29,12 +29,19 @@ public class MovieSessionController {
     public List<MovieSession> getAllMovieSessionsForToday() {
         return movieSessionService.getAllMovieSessionsForToday();
     }
+
     @GetMapping("{id}")
     public MovieSession getById(@PathVariable Integer id) {
         return movieSessionService.getById(id);
     }
+
     @GetMapping("{id}/{day}")
-    public List<MovieSession> findAllMovieSessionsByDayAndMovieIds(@PathVariable Date day, @PathVariable Integer id){
+    public List<MovieSession> findAllMovieSessionsByDayAndMovieIds(@PathVariable Date day, @PathVariable Integer id) {
         return movieSessionService.getAllMovieSessionsByDayAndMovieId(day, id);
+    }
+
+    @GetMapping("{day}")
+    public List<MovieSession> getByDay(@PathVariable Date day) {
+        return movieSessionService.findAllMovieSessionsByDay(day);
     }
 }
