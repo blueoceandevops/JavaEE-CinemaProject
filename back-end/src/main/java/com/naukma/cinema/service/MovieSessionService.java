@@ -5,6 +5,7 @@ import com.naukma.cinema.domain.MovieSession;
 import com.naukma.cinema.repository.MovieSessionRepository;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -29,6 +30,11 @@ public class MovieSessionService {
         return repository.findAllMovieSessionsForTodayByMovieIds(newHashSet(id));
     }
 
+    public List<MovieSession> getAllMovieSessionsByDayAndMovieId(Date day, Integer id) {
+        requireNonNull(id);
+        return repository.findAllMovieSessionsByDayAndMovieIds(day, newHashSet(id));
+    }
+
     public List<MovieSession> getAllMovieSessionsForToday() {
         Set<Integer> runningMoviesIds = movieService.getAllRunningMovies().stream()
                 .map(Movie::getId)
@@ -38,6 +44,7 @@ public class MovieSessionService {
         }
         return repository.findAllMovieSessionsForTodayByMovieIds(runningMoviesIds);
     }
+
 
     public MovieSession getById(Integer id) {
         return repository.findById(id)

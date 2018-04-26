@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -31,5 +32,9 @@ public class MovieSessionController {
     @GetMapping("{id}")
     public MovieSession getById(@PathVariable Integer id) {
         return movieSessionService.getById(id);
+    }
+    @GetMapping("{id}/{day}")
+    public List<MovieSession> findAllMovieSessionsByDayAndMovieIds(@PathVariable Date day, @PathVariable Integer id){
+        return movieSessionService.getAllMovieSessionsByDayAndMovieId(day, id);
     }
 }

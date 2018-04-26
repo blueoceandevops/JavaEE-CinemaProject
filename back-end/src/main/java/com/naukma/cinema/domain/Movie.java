@@ -29,6 +29,16 @@ public class Movie {
 
     private Integer ageRestriction;
 
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @ManyToMany
     @JoinTable(
             name = "movie_map_genre",

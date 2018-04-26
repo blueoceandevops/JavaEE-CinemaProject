@@ -3,7 +3,6 @@ package com.naukma.cinema.controller;
 import com.naukma.cinema.domain.Movie;
 import com.naukma.cinema.service.MovieService;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +27,6 @@ public class MovieController {
     public List<Movie> getAllFutureMovies() {
         return movieService.getAllFutureMovies();
     }
+
 
 }
