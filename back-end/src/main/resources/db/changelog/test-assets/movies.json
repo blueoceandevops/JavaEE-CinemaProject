@@ -82,5 +82,47 @@
     "movie_trailer_link":"",
     "movie_rating":7.5,
     "age_restriction":18
+  },
+  {
+    "id":8,
+    "title":"Острів Собак",
+    "original_title":"Isle of Dogs",
+    "description": "«ОСТРІВ СОБАК» - це історія про Атарі Кобаяші, 12-річного хлопчика, який перебуває під опікою корумпованого мера Кобаяші. Коли за наказом мера усіх домашніх собак міста Мегасакі висилають до величезного сміттєзвалища, Атарі самостійно рушає на мініатюрному турбогвинтовому літаку до Сміттєвого Острову у пошуках свого вірного песика Спота. Там з допомогою зграї нових друзів – дворняжок він організує грандіозний похід, який вирішить долю й майбутнє всієї Префектури.",
+    "duration":101,
+    "release_date":"2018-02-15",
+    "cinema_release_date":"2018-05-03",
+    "cinema_release_end_date":"2018-05-23",
+    "movie_poster_link":"https://ia.media-imdb.com/images/M/MV5BMTYyOTUwNjAxM15BMl5BanBnXkFtZTgwODcyMzE0NDM@._V1_SX300.jpg",
+    "movie_trailer_link":"",
+    "movie_rating":8.2,
+    "age_restriction":13
+  },
+  {
+    "id":9,
+    "title":"Мері Шеллі та монстр Франкенштейна",
+    "original_title":"Mary Shelley",
+    "description": "Фільм роповідає про кохання між юною Мері Годвін і поетом Персі Шеллі, результатом якого стало написання Мері Шеллі роману про Франкенштейна.",
+    "duration":120,
+    "release_date":"2018-04-25",
+    "cinema_release_date":"2018-05-31",
+    "cinema_release_end_date":"2018-06-27",
+    "movie_poster_link":"https://images-na.ssl-images-amazon.com/images/M/MV5BYjU0YTQ0YTMtYzc1NC00N2I2LWFkMzUtOGY4ZTI5ZWYwMzA1XkEyXkFqcGdeQXVyMzgwMzczMzU@._V1_SX300.jpg",
+    "movie_trailer_link":"",
+    "movie_rating":6.7,
+    "age_restriction":16
+  },
+  {
+    "id":10,
+    "title":"Соло: Зоряні війни. Історія",
+    "original_title":"Solo: A Star Wars Story",
+    "description": "Історія найвідомішого контрабандиста у Всесвіті Зоряних Війн. Ким був Хан Соло насправді, і чому перейшов на бік повстанців у боротьбі проти могутньої галактичної імперії?",
+    "duration":135,
+    "release_date":"2018-05-25",
+    "cinema_release_date":"2018-05-25",
+    "cinema_release_end_date":"2018-06-20",
+    "movie_poster_link":"https://images-na.ssl-images-amazon.com/images/M/MV5BMjAwNzI3OTA5MV5BMl5BanBnXkFtZTgwMzc0MDE4NDM@._V1_SX300.jpg",
+    "movie_trailer_link":"",
+    "movie_rating":7.2,
+    "age_restriction":12
   }
 ]
