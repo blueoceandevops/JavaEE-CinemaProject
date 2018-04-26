@@ -23,13 +23,10 @@ public class MainController {
 
 
     @RequestMapping(value = "/soon")
-    public void soon(HttpServletRequest request, HttpServletResponse response,
-                       ServletContext servletContext, TemplateEngine templateEngine) throws IOException {
-        List<Movie> moviesSoon = movieService.getAllRunningMovies();
-        WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("moviesSoon", moviesSoon);
-
-        templateEngine.process("soon", ctx, response.getWriter());
+    public String soon(Map<String, Object> model){
+        List<Movie> moviesSoon = movieService.getAllFutureMovies();
+        model.put("moviesSoon", moviesSoon);
+        return "soon";
     }
 
     @RequestMapping(value = "/about-us")

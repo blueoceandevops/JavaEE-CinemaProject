@@ -35,37 +35,14 @@ $(document).ready(function(){
         $(this).addClass("active");
         var date = $(this).find(".date-info");
         var datObj = {date : date.attr("date-date")};
-        $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            url: "/",
-            data: JSON.stringify(datObj),
-            dataType: 'json',
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + JSON.stringify(data, null, 4) + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("SUCCESS : ", data);
-            },
-            error: function (e) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + e.responseText + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("ERROR : ", e);
-            }
-        });
+        getByDate(datObj);
     });
 
     $("#by-date").click(function () {
         $(".nav-link").removeClass("active");
         $(this).addClass("active");
         $(".calendar").removeClass("disable-calendar");
+
     });
 
     $("#by-film").click(function () {
@@ -75,61 +52,15 @@ $(document).ready(function(){
     });
 
     $("#by-time").click(function () {
-        $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            url: "/by-time",
-            dataType: 'json',
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + JSON.stringify(data, null, 4) + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("SUCCESS : ", data);
-            },
-            error: function (e) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + e.responseText + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("ERROR : ", e);
-            }
-        });
+        sortByTime();
     });
 
     $("#by-new").click(function () {
-        $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            url: "/by-new",
-            dataType: 'json',
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + JSON.stringify(data, null, 4) + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("SUCCESS : ", data);
-            },
-            error: function (e) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + e.responseText + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("ERROR : ", e);
-            }
-        });
+        sortByNew();
     });
 
     $("#by-alphabet").click(function () {
-
+        sortByAlfabet();
     });
 
 });
