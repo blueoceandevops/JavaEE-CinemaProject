@@ -18,14 +18,14 @@
 <body>
 
 <div th:replace="~{fragments/header :: header}"></div>
-<!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" th:unless="${param.movies == null}">
-    <div class="carousel-inner" th:each="movie : ${param.movies}">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" th:unless="${movies == null}">
+    <div class="carousel-inner" th:each="movie : ${movies}">
         <div class="preview carousel-item active">
-            <img class="d-block carousel-img" th:src="${movie.poster}" alt="First">
+            <img class="d-block carousel-img" th:src="${movie.moviePosterLink}" alt="First">
             <div class="info carousel-caption">
                 <div class="caption-container row">
                     <div class="caption-details col-md-6 col-sm-12">
-                        <h2 th:text="${movie.name}">Месники: Війна нескінченності</h2>
+                        <h2 th:text="${movie.title}">Месники: Війна нескінченності</h2>
                     </div>
                     <div class="caption-link col-md-6 col-sm-12">
                         <a href="" th:href="@{#}" class="btn btn-outline-secondary">Купити</a>
@@ -42,7 +42,7 @@
         <span class="fas fa-chevron-right fa-3x"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>-->
+</div>
 
 <div class="container-fluid">
     <div class="new-film-panel">
@@ -79,29 +79,29 @@
                     </ul>
                 </nav>
                 <div th:replace="~{fragments/calendar :: calendar}"></div>
-               <!-- <div class="all-films" th:each="movie : ${param.movies}" th:unless="${param.movies == null}">
+               <div class="all-films" th:each="movie : ${movies}" th:unless="${movies == null}">
                     <div class="one-film">
                         <div class="row">
                             <div class="col-md-3">
-                                <img class="poster" th:src="${movie.poster}" alt="Film">
+                                <img class="poster" th:src="${movie.moviePosterLink}" alt="Film">
                             </div>
                             <div class="col-md-6 text-left film-text">
-                                <h5 class="film-name" th:text="${movie.name}">Месники: війна нескінченності</h5>
+                                <h5 class="film-name" th:text="${movie.title}">Месники: війна нескінченності</h5>
                                 <span class="time">134 хв.</span>
-                                <p class="description" th:text="${movie.short_des}">
+                                <p class="description" th:text="${movie.getGenres()}">
                                     До цього йшли всі події. Поки супергерої на Землі і за її межами боролися проти злодіїв,
                                     кожен з яких прагнув влади, хаосу або знищень, за всім цим спостерігав грізний титан
                                     Танос. Але тепер його час вийти на сцену.
                                 </p>
                             </div>
                             <div class="col-md-3">
-                                <div th:each="time : ${movie.times}">
-                                    <a href="" th:href="@{#}" class="btn btn-outline-secondary" th:text="${time}">12:00</a>
-                                </div>
+
+                                    <a href="" th:href="@{#}" class="btn btn-outline-secondary">Купити</a>
+
                             </div>
                         </div>
                     </div>
-                </div>-->
+                </div>
              </div>
             <div class="col-sm-12 col-md-2"></div>
         </div>

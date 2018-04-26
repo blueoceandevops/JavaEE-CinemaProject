@@ -25,6 +25,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <frontend.artifact.id>cinema-ui</frontend.artifact.id>
+        <backend.artifact.id>back-end</backend.artifact.id>
     </properties>
 
 
