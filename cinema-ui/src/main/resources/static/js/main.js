@@ -1,5 +1,6 @@
 $(document).ready(function(){
-
+    var first = $( '.carousel-item' ).filter( ':first' );
+    first.addClass("active");
     $("#dateScroller")
     {
         var d0 = new Date();
@@ -128,30 +129,7 @@ $(document).ready(function(){
     });
 
     $("#by-alphabet").click(function () {
-        $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            url: "/by-alphabet",
-            dataType: 'json',
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
 
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + JSON.stringify(data, null, 4) + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("SUCCESS : ", data);
-            },
-            error: function (e) {
-
-                var json = "<h4>Ajax Response</h4><pre>"
-                    + e.responseText + "</pre>";
-                $('#feedback').html(json);
-
-                console.log("ERROR : ", e);
-            }
-        });
     });
 
 });

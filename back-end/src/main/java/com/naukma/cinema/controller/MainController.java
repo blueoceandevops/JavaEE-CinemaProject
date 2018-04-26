@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class MainController {
@@ -20,22 +21,15 @@ public class MainController {
     @Autowired
     private MovieService movieService;
 
-    @RequestMapping(value = "/")
-    public void main(HttpServletRequest request, HttpServletResponse response,
-                       ServletContext servletContext, TemplateEngine templateEngine) throws IOException {
-
-        List<Movie> movies = movieService.getAllRunningMovies();
-
-        WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
-        ctx.setVariable("movies", movies);
-
-        templateEngine.process("index", ctx, response.getWriter());
-    }
 
     @RequestMapping(value = "/soon")
-    public String soon()
-    {
-        return "soon";
+    public void soon(HttpServletRequest request, HttpServletResponse response,
+                       ServletContext servletContext, TemplateEngine templateEngine) throws IOException {
+        List<Movie> moviesSoon = movieService.getAllRunningMovies();
+        WebContext ctx = new WebContext(request, response, servletContext, request.getLocale());
+        ctx.setVariable("moviesSoon", moviesSoon);
+
+        templateEngine.process("soon", ctx, response.getWriter());
     }
 
     @RequestMapping(value = "/about-us")
@@ -44,4 +38,10 @@ public class MainController {
         return "about-us";
     }
 
+    @RequestMapping(value = "/")
+    public String main(Map<String, Object> model){
+        List<Movie> movies = movieService.getAllRunningMovies();
+        model.put("movies", movies);
+        return "index";
+    }
 }

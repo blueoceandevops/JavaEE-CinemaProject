@@ -19,8 +19,8 @@
 
 <div th:replace="~{fragments/header :: header}"></div>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" th:unless="${movies == null}">
-    <div class="carousel-inner" th:each="movie : ${movies}">
-        <div class="preview carousel-item active">
+    <div class="carousel-inner">
+        <div class="preview carousel-item"  th:each="movie : ${movies}">
             <img class="d-block carousel-img" th:src="${movie.moviePosterLink}" alt="First">
             <div class="info carousel-caption">
                 <div class="caption-container row">
@@ -28,7 +28,7 @@
                         <h2 th:text="${movie.title}">Месники: Війна нескінченності</h2>
                     </div>
                     <div class="caption-link col-md-6 col-sm-12">
-                        <a href="" th:href="@{#}" class="btn btn-outline-secondary">Купити</a>
+                        <a href="/about-movie" th:href="@{/about-movie}" class="btn btn-outline-secondary">Купити</a>
                     </div>
                 </div>
             </div>
@@ -85,19 +85,17 @@
                             <div class="col-md-3">
                                 <img class="poster" th:src="${movie.moviePosterLink}" alt="Film">
                             </div>
-                            <div class="col-md-6 text-left film-text">
+                            <div class="col-md-6 text-left film-text" data-id="${movie.id}">
                                 <h5 class="film-name" th:text="${movie.title}">Месники: війна нескінченності</h5>
-                                <span class="time">134 хв.</span>
-                                <p class="description" th:text="${movie.getGenres()}">
+                                <span class="time" th:text="${movie.duration} + ' хв.'">134 хв.</span>
+                                <p class="description" th:text="${movie.title}">
                                     До цього йшли всі події. Поки супергерої на Землі і за її межами боролися проти злодіїв,
                                     кожен з яких прагнув влади, хаосу або знищень, за всім цим спостерігав грізний титан
                                     Танос. Але тепер його час вийти на сцену.
                                 </p>
                             </div>
                             <div class="col-md-3">
-
-                                    <a href="" th:href="@{#}" class="btn btn-outline-secondary">Купити</a>
-
+                                <a href="" th:href="@{/about-movie}" class="btn btn-outline-secondary">Купити</a>
                             </div>
                         </div>
                     </div>
