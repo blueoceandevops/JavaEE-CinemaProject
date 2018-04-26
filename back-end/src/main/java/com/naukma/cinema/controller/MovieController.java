@@ -22,4 +22,8 @@ public class MovieController {
     public List<Movie> getAllRunningMovies() {
         return movieService.getAllRunningMovies();
     }
+    @GetMapping("/soon")
+    public List<Movie> getAllFutureMovies() {
+        return movieService.getAllFutureMovies();
+    }
 }
