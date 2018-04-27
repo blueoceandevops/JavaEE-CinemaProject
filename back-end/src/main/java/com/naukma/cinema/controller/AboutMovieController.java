@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -34,5 +38,25 @@ public class AboutMovieController {
         model.put("currentMovieSession", currentMovieSession);
         return "about-movie";
     }
+
+    @RequestMapping(value = "/movie/by-date")
+    public String byDate(@RequestParam(value = "date") String dat, @RequestParam(value = "id") Integer id, Map<String, Object> model) throws ParseException {
+        System.out.println("dat");
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        java.util.Date dd = format.parse(dat);
+        System.out.println(dd);
+        Date date = new Date(dd.getTime());
+        List<MovieSession> currentMovieSession = movieSessionService.getAllMovieSessionsByDayAndMovieId(date, id);
+        for(MovieSession movieSession: currentMovieSession){
+            System.out.println(movieSession.getMovie().getId() + movieSession.getMovie().getTitle());
+        }
+        if(currentMovieSession.size() > 0){
+            Movie currentMovie = currentMovieSession.get(0).getMovie();
+            model.put("currentMovie", currentMovie);
+        }
+        model.put("currentMovieSession", currentMovieSession);
+        return "about-movie";
+    }
+
 
 }

@@ -41,7 +41,7 @@ public class MovieSessionService {
 
     public List<MovieSession> getAllMovieSessionsByDayAndMovieId(Date day, Integer id) {
         requireNonNull(id);
-        return repository.findAllMovieSessionsByDayAndMovieIds(day, newHashSet(id));
+        return repository.findAllMovieSessionsByDayAndMovieId(day, id);
     }
 
     public List<MovieSession> getAllMovieSessionsForToday() {
