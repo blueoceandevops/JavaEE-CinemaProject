@@ -12,7 +12,7 @@
   font-weight: normal;
 }
 
-body, body a, body a:visited
+body, body a, body a:visited, .modal-dialog
 {
   font-family: "FiraMono";
   color: @light-gray;
@@ -608,5 +608,32 @@ div
     .description{
       padding-top: 20px;
     }
+  }
+}
+
+.my-model{
+  color: @main-black;
+  button {
+    border: 3px solid @main-orang !important;
+    background-color: transparent;
+    color: @main-orang !important;
+    display: inline-block;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 10px 30px;
+    text-decoration: none;
+    vertical-align: middle;
+    margin: 10px;
+  }
+
+  button:hover{
+    border-color: @dark-orang !important;
+    background-color: transparent;
+    color: @dark-orang !important;
+  }
+
+  input:focus{
+    border-color: @middle-gray;
+    box-shadow: 0 0 0 0.2rem rgba(185, 185, 185, 0.2);
   }
 }
