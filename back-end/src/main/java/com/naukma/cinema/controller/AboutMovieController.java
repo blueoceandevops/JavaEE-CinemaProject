@@ -2,6 +2,7 @@ package com.naukma.cinema.controller;
 
 import com.naukma.cinema.domain.Movie;
 import com.naukma.cinema.domain.MovieSession;
+import com.naukma.cinema.service.MovieService;
 import com.naukma.cinema.service.MovieSessionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,29 +23,26 @@ public class AboutMovieController {
 
     @Autowired
     private MovieSessionService movieSessionService;
+    @Autowired
+    private MovieService movieService;
 
     @RequestMapping(value = "/about-movie")
     public String about(@RequestParam(value = "id") Integer id, Map<String, Object> model)
     {
         System.out.println(id);
         List<MovieSession> currentMovieSession = movieSessionService.getAllMovieSessionsForTodayByMovieId(id);
-        for(MovieSession movieSession: currentMovieSession){
-            System.out.println(movieSession.getMovie().getId() + movieSession.getMovie().getTitle());
-        }
-        if(currentMovieSession.size() > 0){
-            Movie currentMovie = currentMovieSession.get(0).getMovie();
-            model.put("currentMovie", currentMovie);
-        }
+
+        Movie currentMovie = movieService.findMovieById(id);
+        model.put("currentMovie", currentMovie);
+
         model.put("currentMovieSession", currentMovieSession);
         return "about-movie";
     }
 
     @RequestMapping(value = "/movie/by-date")
     public String byDate(@RequestParam(value = "date") String dat, @RequestParam(value = "id") Integer id, Map<String, Object> model) throws ParseException {
-        System.out.println("dat");
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         java.util.Date dd = format.parse(dat);
-        System.out.println(dd);
         Date date = new Date(dd.getTime());
         List<MovieSession> currentMovieSession = movieSessionService.getAllMovieSessionsByDayAndMovieId(date, id);
         for(MovieSession movieSession: currentMovieSession){

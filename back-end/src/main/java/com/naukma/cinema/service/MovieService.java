@@ -23,4 +23,6 @@ public class MovieService {
         return movieRepository.findAllFutureMovies();
     }
     public List<Movie> getAllMoviesByDay(Date day){return movieRepository.findAllMoviesByDay(day);}
+    public Movie findMovieById(Integer id){
+        return movieRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("No movie session with id = " + id));}
 }

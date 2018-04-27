@@ -46,11 +46,11 @@
                 </div>
                 </div>
             </div>
-           <div class="time-map" th:unless="${currentMovieSession == null}">
+           <div class="time-map">
                <div class="gray-head-part">Розклад</div>
                <div th:replace="~{fragments/calendar :: calendar}"></div>
-               <div class="time-panel" th:each="se : ${currentMovieSession}">
-                   <a th:href="@{'/buy-ticket?id='+ ${se.id}}" class="btn btn-outline-secondary" th:text="${se.startDateTime.getHour()+':00'}">12:00</a>
+               <div class="time-panel">
+                   <a  th:unless="${currentMovieSession == null}" th:each="se : ${currentMovieSession}" class="btn btn-outline-secondary" th:href="@{'/buy-ticket?id='+ ${se.id}}"  th:text="${se.startDateTime.getHour()+':00'}">12:00</a>
                </div>
            </div>
         </div>

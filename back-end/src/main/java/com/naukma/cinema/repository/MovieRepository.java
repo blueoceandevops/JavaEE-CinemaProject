@@ -22,5 +22,9 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
     @Query("FROM Movie m " +
             "WHERE m.cinemaReleaseDate <= (:day) AND m.cinemaReleaseEndDate >= (:day)")
     List<Movie> findAllMoviesByDay(@Param("day") Date day);
+
+ @Query("FROM Movie m " +
+         "WHERE m.id = (:id)")
+    List<Movie> findMovieById(@Param("id") Integer id);
     
 }
