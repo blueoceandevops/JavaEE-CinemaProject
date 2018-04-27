@@ -37,7 +37,7 @@
                         <div class="ganres">
                             <strong  th:each="genre : ${currentMovie.genres}" th:text="${genre.name} + '&nbsp;'"> Фантастика бойвик драма</strong>
                         </div>
-                        <p class="description" th:text="${currentMovie.title}">
+                        <p class="description" th:text="${currentMovie.description}">
                             До цього йшли всі події. Поки супергерої на Землі і за її межами боролися проти злодіїв,
                             кожен з яких прагнув влади, хаосу або знищень, за всім цим спостерігав грізний титан
                             Танос. Але тепер його час вийти на сцену.
@@ -67,6 +67,7 @@
         th:src="@{webjars/bootstrap/4.0.0/js/bootstrap.bundle.min.js}"></script>
 <script src="webjars/font-awesome/5.0.10/svg-with-js/js/fontawesome-all.min.js"
         th:src="@{webjars/font-awesome/5.0.10/svg-with-js/js/fontawesome-all.min.js}"></script>
+<script th:src="@{js/about-movie.js}" src="static/js/about-movie.js"></script>
 <script th:src="@{js/main.js}" src="static/js/main.js"></script>
 <script type="text/javascript">
 $(".bottom-menu .nav-link").removeClass("active");

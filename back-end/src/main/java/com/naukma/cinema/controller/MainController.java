@@ -58,7 +58,6 @@ public class MainController {
         Date date = new Date(dd.getTime());
         movies = movieService.getAllMoviesByDay(date);
         model.put("movies", movies);
-
         return "index";
     }
 

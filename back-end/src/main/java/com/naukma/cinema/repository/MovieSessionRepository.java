@@ -13,12 +13,12 @@ import java.util.Set;
 public interface MovieSessionRepository extends CrudRepository<MovieSession, Integer> {
 
     @Query("FROM MovieSession s " +
-            "WHERE s.movie.id = id AND CAST(s.startDateTime AS date) = current_date")
-    List<MovieSession> findAllMovieSessionsForTodayByMovieId(Integer id);
+            "WHERE s.movie.id = (:id) AND CAST(s.startDateTime AS date) = current_date")
+    List<MovieSession> findAllMovieSessionsForTodayByMovieId(@Param("id") Integer id);
 
     @Query("FROM MovieSession s " +
             "WHERE CAST(s.startDateTime AS date) = current_date " +
-            "AND s.movie.id in (:ids)")
+            "AND s.movie.id IN (:ids)")
     List<MovieSession> findAllMovieSessionsForTodayByMovieIds(@Param("ids") Set<Integer> ids);
 
     @Query("FROM MovieSession s " +
