@@ -30,7 +30,7 @@
             <div class="one-new-film" th:each="movie : ${moviesSoon}" >
                 <img class="poster" th:src="${movie.moviePosterLink}" alt="Film">
                 <h3 th:text="${movie.title}">Месники: Війна нескінченності</h3>
-                <span class="relize-date" th:text="${movie.releaseDate.toString()}">20.04.2018</span>
+                <span class="relize-date" th:text="${movie.cinemaReleaseDate.toString()}">20.04.2018</span>
             </div>
         </div>
     </div>
