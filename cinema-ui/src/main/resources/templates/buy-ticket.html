@@ -26,7 +26,25 @@
                 Вибір місця - <h4 th:text="${title}">Месники: Війна Нескінченності</h4>
             </div>
             <div class="buy-ticket-panel">
-                <div class="cinemaHall zal1"></div>
+                <div class="cinemaHall">
+                    <div th:each="row: ${places}">
+                        <button th:each="place: ${row.getValue()}" data-th-ik="${place.getValue()}" th:unless="${place.getValue()== false}"
+                                type="button" class="btn btn-secondary seat " data-th-data-row="${row.getKey()}"
+                                data-th-data-seat="${place.getKey()}"
+                                data-toggle="tooltip" data-placement="top"
+                                data-th-title="'Ряд - ' + ${row.getKey()} + ' Місце - ' + ${place.getKey()} + ' Ціна 60 грн'">&nbsp;
+                        </button>
+                        <button disabled th:each="place: ${row.getValue()}" data-th-ik="${place.getValue()}" th:unless="${place.getValue()== true}"
+                                type="button" class="btn btn-secondary seat " data-th-data-row="${row.getKey()}"
+                                data-th-data-seat="${place.getKey()}"
+                                data-toggle="tooltip" data-placement="top"
+                                data-th-title="'Ряд - ' + ${row.getKey()} + ' Місце - ' + ${place.getKey()} + ' Ціна 60 грн'">&nbsp;
+                        </button>
+                        <div class="passageBetween">&nbsp;</div>
+
+                    </div>
+
+                </div>
                 <div class="result">
                     <h3>Обрані місця</h3>
                     <hr/>

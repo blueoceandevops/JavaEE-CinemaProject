@@ -6,6 +6,8 @@ import com.naukma.cinema.repository.OccupiedSeatRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class OccupiedSeatService {
 
@@ -23,5 +25,9 @@ public class OccupiedSeatService {
         occupiedSeat.setSeat(seat);
         occupiedSeat.setMovieSession(movieSession);
         return repository.save(occupiedSeat);
+    }
+
+    public List<OccupiedSeat> findOccupiedSeatBySessionId(Integer movieSessionId){
+        return repository.findOccupiedSeatBySessionId(movieSessionId);
     }
 }

@@ -1,24 +1,7 @@
 $(document).ready(function () {
     $(".bottom-menu .nav-link").removeClass("active");
-    var price = 60;
-    var cinemaHall1 = {
-            row: [10, 20, 30, 30, 30, 30, 30, 30, 30, 30, 30]
-        }, cinemaHallMap = '';
-    var j = 1;
-    $.each(cinemaHall1.row, function(row, numberOfSeats) {
-        cinemaHallRow = '';
-        for (i = 1; i <= numberOfSeats; i++) {
-            cinemaHallRow += '<button type="button" class="btn btn-secondary seat " data-row="' +
-                j + '" data-seat="' + i + '"' +
-                'data-toggle="tooltip"' +
-                'data-placement="top"' +
-                'title="Ряд - ' + j + ' Місце - ' + i +'\nЦіна - ' + price + ' грн'+'">&nbsp;</button>';
-        }
-        cinemaHallMap += cinemaHallRow + '<div class="passageBetween">&nbsp;</div>';
-        j++;
-    });
+     var price = 60;
 
-    $('.zal1').html(cinemaHallMap);
     $('.seat').on('click', function(e) {
         $(e.currentTarget).toggleClass('bay');
         showBaySeat();
