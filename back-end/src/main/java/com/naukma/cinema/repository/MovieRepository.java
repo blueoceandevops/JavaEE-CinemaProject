@@ -3,6 +3,7 @@ package com.naukma.cinema.repository;
 import com.naukma.cinema.domain.Movie;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.sql.Date;
 import java.util.List;
@@ -19,7 +20,6 @@ public interface MovieRepository extends CrudRepository<Movie, Integer> {
     List<Movie> findAllFutureMovies();
 
     @Query("FROM Movie m " +
-            "WHERE m.cinemaReleaseDate >= (:day) ")
-    List<Movie> findAllMoviesByDay(Date day);
+    List<Movie> findAllMoviesByDay(@Param("day") Date day);
     
 }

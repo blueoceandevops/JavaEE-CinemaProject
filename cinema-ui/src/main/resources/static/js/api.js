@@ -2,13 +2,12 @@
 function getByDate(datObj) {
     $.ajax({
         type: "GET",
-        contentType: "application/json",
-        url: "/by-date",
-        data: JSON.stringify(datObj),
-        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        url: "/by-date?date=" + datObj.date,
         async: true,
         success: function (date) {
-            console.log("SUCCESS: ",  date);
+            var v = $(date).find(".all-films").html();
+            $(".all-films").html(v);
         },
         error: function (e) {
             console.log("ERROR : ", e);
@@ -24,7 +23,8 @@ function getByFilm() {
         url: "/by-film",
         async: true,
         success: function (date) {
-            console.log("SUCCESS " + date);
+            var v = $(date).find(".all-films").html();
+            $(".all-films").html(v);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("ERROR : ", textStatus);

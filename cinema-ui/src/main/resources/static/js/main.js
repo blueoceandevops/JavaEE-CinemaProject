@@ -13,22 +13,22 @@ $(document).ready(function(){
         $("#d0 .week-day").text(getWeekDay(d0));
         $("#d0 .date").text(d0.getDate());
         $("#d0 .month").text(getMonth(d0));
-        $("#d0").attr("date-date", d0);
+        $("#d0").attr("date-date", formatDate(d0));
 
         $("#d1 .week-day").text(getWeekDay(d1));
         $("#d1 .date").text(d1.getDate());
         $("#d1 .month").text(getMonth(d1));
-        $("#d1").attr("date-date", d1);
+        $("#d1").attr("date-date",  formatDate(d1));
 
         $("#d2 .week-day").text(getWeekDay(d2));
         $("#d2 .date").text(d2.getDate());
         $("#d2 .month").text(getMonth(d2));
-        $("#d2").attr("date-date", d2);
+        $("#d2").attr("date-date",  formatDate(d2));
 
         $("#d3 .week-day").text(getWeekDay(d3));
         $("#d3 .date").text(d3.getDate());
         $("#d3 .month").text(getMonth(d3));
-        $("#d3").attr("date-date", d3);
+        $("#d3").attr("date-date",  formatDate(d3));
     }
 
     $(".date-link").click(function () {
@@ -43,7 +43,6 @@ $(document).ready(function(){
         $(".nav-link").removeClass("active");
         $(this).addClass("active");
         $(".calendar").removeClass("disable-calendar");
-
     });
 
     $("#by-film").click(function () {
@@ -86,8 +85,8 @@ function sortByNew() {
         a = $(a).attr('date');
         b = $(b).attr('date');
         var c = 0;
-        if (a > b) c = 1;
-        if (a < b) c = -1;
+        if (a < b) c = 1;
+        if (a > b) c = -1;
         return c;
     });
     $(".all-films").html("");
@@ -104,4 +103,18 @@ function getWeekDay(date) {
 function getMonth(date) {
     var days = ['січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'];
     return days[date.getMonth()];
+}
+
+function formatDate(date) {
+
+    var dd = date.getDate();
+    if (dd < 10) dd = '0' + dd;
+
+    var mm = date.getMonth() + 1;
+    if (mm < 10) mm = '0' + mm;
+
+    var yy = date.getFullYear() % 100;
+    yy = '20' + yy;
+
+    return dd + '/' + mm + '/' + yy;
 }
